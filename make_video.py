@@ -559,6 +559,12 @@ def text_block(words, size, max_w, colors=None, stroke=8, fill=(255, 255, 255, 2
     return img
 
 
+def fit_size(words, size, max_w, font=FONT_BLACK):
+    """Largest size up to `size` at which the longest word fits (wrapping can't split a word)."""
+    widest = max(ImageFont.truetype(font, size).getlength(w) for w in words)
+    return min(size, int(size * max_w / widest))
+
+
 def with_shadow(img, blur=10, offset=8, alpha=0.6):
     out = Image.new("RGBA", (img.width + 4 * blur, img.height + 4 * blur + offset))
     shadow = Image.new("RGBA", img.size, (0, 0, 0, 255))
@@ -621,7 +627,7 @@ def build_overlays(script, parts, sections, swords):
     # Hook text on the very first frame, over the strongest shot.
     hook_text = script.get("hook_on_screen") or re.split(r"(?<=[.!?])\s", script["hook"])[0]
     words = hook_text.upper().rstrip(".").split()
-    L.add(text_block(words, 92, max_w, colors=[(255, 255, 255)] * (len(words) - 1) + [YELLOW]),
+    L.add(text_block(words, fit_size(words, 92, max_w), max_w, colors=[(255, 255, 255)] * (len(words) - 1) + [YELLOW]),
           0.0, hook["end"], CX, top=SAFE[1] + 60)
     # A rank badge and the on-screen line for each entry.
     for sec, p in zip(sections, parts):
@@ -629,7 +635,8 @@ def build_overlays(script, parts, sections, swords):
             continue
         e = p["entry"]
         bottom = L.add(rank_badge(e["rank"]), sec["start"], sec["end"], CX, top=SAFE[1] + 20, fade=0.15)
-        L.add(text_block(e["on_screen"].upper().split(), 70, max_w, colors=None),
+        line = e["on_screen"].upper().split()
+        L.add(text_block(line, fit_size(line, 70, max_w), max_w),
               sec["start"], sec["end"], CX, top=bottom - 10, fade=0.15)
     # Word-by-word captions in the middle third, the spoken word highlighted.
     chunks = caption_chunks(swords)
@@ -639,13 +646,14 @@ def build_overlays(script, parts, sections, swords):
             end = min(end, chunks[ci + 1][0]["start"])
         end = max(end, chunk[-1]["end"])
         words = [re.sub(r"[,.;:]+$", "", w["word"]).upper() for w in chunk]
+        size = fit_size(words, 96, max_w)
         for k, w in enumerate(chunk):
             t0 = chunk[0]["start"] if k == 0 else w["start"]
             t1 = chunk[k + 1]["start"] if k + 1 < len(chunk) else end
             if t1 - t0 < 1 / FPS:
                 continue
             colors = [YELLOW if j == k else (255, 255, 255) for j in range(len(words))]
-            L.add(text_block(words, 96, max_w, colors=colors, stroke=9), t0, t1, CX, cy=H * 0.56)
+            L.add(text_block(words, size, max_w, colors=colors, stroke=9), t0, t1, CX, cy=H * 0.56)
     return L
 
 
