@@ -685,7 +685,7 @@ def render(job, script, parts, sections, swords, total, bg):
     video = video.with_audio(CompositeAudioClip([voice] + ([music] if music else [])))
     raw = job / "render.mp4"
     video.write_videofile(str(raw), fps=FPS, codec="libx264", audio_codec="aac", preset="medium",
-                          threads=os.cpu_count(), ffmpeg_params=["-crf", "18", "-pix_fmt", "yuv420p"],
+                          threads=os.cpu_count(), temp_audiofile=str(job / "render_audio.m4a"), ffmpeg_params=["-crf", "18", "-pix_fmt", "yuv420p"],
                           logger=None)
     final = job / "final.mp4"
     run(["ffmpeg", "-y", "-i", raw, "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
