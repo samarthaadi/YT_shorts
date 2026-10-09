@@ -1,0 +1,8 @@
+moviepy>=2.1,<3
+requests
+pillow
+numpy
+python-dotenv
+kokoro-onnx
+soundfile
+# openai-whisper   # only if you record your own voice.mp3

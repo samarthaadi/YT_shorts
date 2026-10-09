@@ -1,0 +1,9 @@
+.env
+__pycache__/
+assets/models/
+assets/fonts/*.ttf
+assets/music/
+used_clips.json
+# Job outputs are rebuilt by make_video.py; only the approved script is tracked.
+jobs/*/*
+!jobs/*/script.json

@@ -1,0 +1,86 @@
+{
+  "topic": "Animal superpowers that sound fake",
+  "title": "5 Animal Superpowers That Sound Fake",
+  "hook": "These five animal superpowers sound fake. Number one shouldn't be possible.",
+  "countdown": [
+    {
+      "rank": 5,
+      "animal": "Archerfish",
+      "narration": "At number five, the archerfish. Imagine picking one familiar face out of a wall of photographs. Researchers trained this fish to recognize a human face, even when tested against forty-four unfamiliar faces.",
+      "on_screen": "Fish Can Recognize Faces",
+      "visual_terms": [
+        "archerfish aquarium close-up",
+        "human face photograph grid",
+        "archerfish spitting at screen"
+      ],
+      "sources": [
+        "https://news.uq.edu.au/2016-06-09-you-fish-can-recognise-human-faces",
+        "https://www.theguardian.com/environment/2016/jun/08/smart-fish-recognise-human-faces-scientist"
+      ]
+    },
+    {
+      "rank": 4,
+      "animal": "Peacock mantis shrimp",
+      "narration": "At number four, the peacock mantis shrimp. You might expect something this small to be slow. Instead, its strike reaches twenty-three meters per second. That's the speed of its punch, not its swimming.",
+      "on_screen": "23 Meters Per Second",
+      "visual_terms": [
+        "peacock mantis shrimp close-up",
+        "mantis shrimp slow motion strike",
+        "mantis shrimp underwater impact"
+      ],
+      "sources": [
+        "https://newsarchive.berkeley.edu/news/media/releases/2004/04/21_shrimp.shtml",
+        "https://www.nhm.ac.uk/discover/mantis-shrimps.html"
+      ]
+    },
+    {
+      "rank": 3,
+      "animal": "Glass frog",
+      "narration": "At number three, the glass frog. While it's sleeping, it hides eighty-nine percent of its red blood cells. Picture blood seemingly vanishing from view while the animal just rests there. That's its disappearing act.",
+      "on_screen": "The Disappearing Blood Trick",
+      "visual_terms": [
+        "transparent glass frog underside",
+        "sleeping glass frog on leaf",
+        "glass frog translucent body close-up"
+      ],
+      "sources": [
+        "https://scholars.duke.edu/publication/1560515",
+        "https://www.smithsonianmag.com/smart-news/these-frogs-turn-nearly-invisible-while-sleeping-180981365/"
+      ]
+    },
+    {
+      "rank": 2,
+      "animal": "Wood frog",
+      "narration": "But number one? Stranger. At number two, the wood frog. Its body can freeze, and its heartbeat stops. You might think that's the end. Then it thaws and survives. It's like nature pressing pause.",
+      "on_screen": "Frozen Without A Heartbeat",
+      "visual_terms": [
+        "wood frog in snow",
+        "frozen wood frog close-up",
+        "wood frog thawing timelapse"
+      ],
+      "sources": [
+        "https://www.nps.gov/dena/learn/nature/amphibians.htm",
+        "https://link.springer.com/article/10.1186/s12864-026-12535-y"
+      ]
+    },
+    {
+      "rank": 1,
+      "animal": "Ballooning spider",
+      "narration": "At number one, the ballooning spider. No wings, yet it can fly. Scientists even tested it in still air, removing wind from the equation. It still lifted off. So what was holding it up? The answer is something invisible: electric fields.",
+      "on_screen": "Flying Using Invisible Electricity",
+      "visual_terms": [
+        "spider ballooning silk threads",
+        "spider airborne slow motion",
+        "spider electrostatic field experiment"
+      ],
+      "sources": [
+        "https://www.bristol.ac.uk/news/2018/july/spiders-electric-fields-.html",
+        "https://www.keranews.org/2018-07-05/when-spiders-go-airborne-its-electric-literally"
+      ]
+    }
+  ],
+  "outro": "And you thought superpowers were just fiction.",
+  "hashtags": ["#shorts", "#animals", "#science"],
+  "music_mood": "curious",
+  "ai_disclosure": false
+}
