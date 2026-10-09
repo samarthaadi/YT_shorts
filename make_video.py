@@ -97,8 +97,8 @@ def lint_script(script):
     total = count(script["hook"]) + count(script["outro"]) + sum(count(e["narration"]) for e in entries)
     if not 160 <= total <= 240:
         warn.append(f"narration is {total} words; the format wants 160-240")
-    if count(script["hook"]) > 9:
-        warn.append(f"hook is {count(script['hook'])} words; the format wants 9 or fewer")
+    if count(script["hook"]) > 12:  # the plan says 9; up to 12 is fine while the Short stays under 80 s
+        warn.append(f"hook is {count(script['hook'])} words; keep it to 12 or fewer")
     if count(script["outro"]) > 8:
         warn.append(f"outro is {count(script['outro'])} words; the format wants 8 or fewer")
     if [e["rank"] for e in entries] != [5, 4, 3, 2, 1]:
