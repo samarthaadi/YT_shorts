@@ -616,7 +616,7 @@ class Layers:
 
 def build_overlays(script, parts, sections, swords):
     L = Layers()
-    max_w = SAFE[2] - SAFE[0] - 40
+    max_w = SAFE[2] - SAFE[0] - 80  # room for the outline and drop shadow
     hook = next(s for s in sections if s["id"] == "hook")
     # Hook text on the very first frame, over the strongest shot.
     hook_text = script.get("hook_on_screen") or re.split(r"(?<=[.!?])\s", script["hook"])[0]
